@@ -19,5 +19,5 @@
 
 1. Fork 本仓库
 2. 在 [Railway](https://railway.com/) 创建 Web Service
-3. Build Command: `pip install -r requirements.txt && npm install`
+3. Build Command: `python3 -m pip install edge-tts || pip install edge-tts || pip3 install edge-tts`
 4. Start Command: `node server.js`
