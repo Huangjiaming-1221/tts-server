@@ -1,7 +1,7 @@
 FROM node:18-slim
 
-# 安装 Python 和 pip
-RUN apt-get update && apt-get install -y python3 python3-pip && \
+# 安装 Python、pip 和 venv
+RUN apt-get update && apt-get install -y python3 python3-pip python3-venv && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # 创建虚拟环境并安装 edge-tts
