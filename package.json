@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node server.js",    
     "postinstall": "python3 -m pip install edge-tts || pip install edge-tts || pip3 install edge-tts"
   },
   "dependencies": {
