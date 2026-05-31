@@ -2,19 +2,23 @@ FROM node:18-slim
 
 # 安装 Python 和 pip
 RUN apt-get update && apt-get install -y python3 python3-pip && \
-    pip3 install edge-tts && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# 创建虚拟环境并安装 edge-tts
+RUN python3 -m venv /opt/venv && \
+    /opt/venv/bin/pip install --upgrade pip && \
+    /opt/venv/bin/pip install edge-tts
+
+# 添加到 PATH
+ENV PATH="/opt/venv/bin:$PATH"
 
 WORKDIR /app
 
-# 先复制 package.json 安装依赖（利用缓存）
 COPY package*.json ./
 RUN npm install
 
-# 复制所有代码
 COPY . .
 
-# 创建音频目录
 RUN mkdir -p audio
 
 EXPOSE 3000
