@@ -18,6 +18,6 @@
 ## 部署
 
 1. Fork 本仓库
-2. 在 [Render](https://render.com) 创建 Web Service
+2. 在 [Railway](https://railway.com/) 创建 Web Service
 3. Build Command: `pip install -r requirements.txt && npm install`
 4. Start Command: `node server.js`
